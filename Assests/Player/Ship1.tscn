@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assests/Player/ShipPControlAlt.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="PrismMesh" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+
+[node name="Ship1" type="RigidBody"]
+gravity_scale = 10.0
+script = ExtResource( 1 )
+
+[node name="PShip" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, -5.96046e-008, 0 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="PShip"]
+transform = Transform( 2, 0, 0, 0, 1.97007, 0.344717, 0, -0.172359, 0.985034, 0, 2.17347, 4.58073 )
+
+[node name="Lights" type="Spatial" parent="PShip/Camera"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 0.985034, -0.172359, 0, 0.172359, 0.985034, 0, -0.280944, -4.69949 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="PShip/Camera/Lights"]
+transform = Transform( 0.1, 0, 0, 0, -1.09278e-008, -0.5, 0, 0.25, -2.18557e-008, 0.393686, -0.00228423, 1.24836 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="PShip/Camera/Lights"]
+transform = Transform( 0.1, 0, 0, 0, -1.09278e-008, -0.5, 0, 0.25, -2.18557e-008, -0.383902, -0.00228423, 1.24836 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="PShip/Camera/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38648 )
+light_color = Color( 0.486275, 0.647059, 1, 1 )
+light_energy = 0.75
+omni_range = 1.56306
+
+[node name="SpotLight" type="SpotLight" parent="PShip/Camera/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899596, -0.527248 )
+shadow_enabled = true
+spot_range = 48.413
+spot_angle = 12.3574
+
+[node name="SpotLight4" type="SpotLight" parent="PShip/Camera/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.135122, -1.6964 )
+shadow_enabled = true
+spot_range = 37.6294
+spot_angle = 42.3353
+
+[node name="SpotLight2" type="SpotLight" parent="PShip/Camera/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974873, -0.286739, -0.674839 )
+light_color = Color( 0.901961, 0.184314, 0.905882, 1 )
+shadow_enabled = true
+spot_range = 48.413
+spot_angle = 12.3574
+
+[node name="SpotLight3" type="SpotLight" parent="PShip/Camera/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916496, -0.286739, -0.674839 )
+light_color = Color( 0.588235, 0.231373, 0.560784, 1 )
+shadow_enabled = true
+spot_range = 48.413
+spot_angle = 12.3574
+
+[node name="MeshInstance" type="MeshInstance" parent="PShip/Camera"]
+transform = Transform( 0.5, 0, 0, 0, 0.492517, -0.172359, 0, 0.0861793, 0.985034, 0, -0.280944, -4.69949 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="PShip/Camera"]
+transform = Transform( 0.25, 0, 0, 0, 0.492517, -0.0861793, 0, 0.0861793, 0.492517, 0, 0.38351, -4.21367 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="PShip/Camera"]
+transform = Transform( -1.09278e-008, -0.5, 0, 0.246259, -2.15286e-008, -0.0861793, 0.0430897, -3.76702e-009, 0.492517, -0.75, -0.620781, -4.75895 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="PShip/Camera"]
+transform = Transform( -1.09278e-008, 0.5, 0, -0.246259, -2.15286e-008, -0.0861793, -0.0430897, -3.76702e-009, 0.492517, 0.738, -0.621003, -4.75899 )
+mesh = SubResource( 2 )
+material/0 = null
+

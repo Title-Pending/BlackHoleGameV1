@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SphereShape" id=1]
 
 [node name="RigidBody" type="RigidBody"]
+gravity_scale = 0.01
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
 
-[node name="OmniLight" type="OmniLight" parent="CollisionShape"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137258, 0, 0 )
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137258, 2.10156, 0 )
 omni_range = 1.97897
 
-[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
-mesh = SubResource( 1 )
-material/0 = null
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+shape = SubResource( 1 )
 

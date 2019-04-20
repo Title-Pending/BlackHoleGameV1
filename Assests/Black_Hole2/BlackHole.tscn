@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assests/Black_Hole2/BlackHole.gd" type="Script" id=1]
+
+[sub_resource type="SphereShape" id=1]
+radius = 20.0
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+radius = 20.0
+height = 40.0
+
+[node name="Black_HoleV2" type="Area"]
+space_override = 2
+gravity_point = true
+gravity_vec = Vector3( 0, 0, 0 )
+gravity = 100.0
+linear_damp = 0.5
+priority = 1.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MI_Inner" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MI_Outter" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 200.0
+one_shot = true
+autostart = true
+
